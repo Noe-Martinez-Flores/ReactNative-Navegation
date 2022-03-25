@@ -5,7 +5,7 @@ export default function Smart(props){
     return (
         <View>
             <Text>Mi Smart</Text>
-            <Button name = "Training" onPress={()=> navigation.navigate("training")}></Button>
+            <Button title="training" onPress={()=> navigation.navigate("training")}></Button>
         </View>
     )
 }

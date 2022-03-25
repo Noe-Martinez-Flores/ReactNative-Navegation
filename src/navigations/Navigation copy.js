@@ -1,59 +1,26 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Icon } from 'react-native-elements'
-//import Index from '../screens/Index';
+
 import IndexStack from './IndexStack';
-// import Profile from '../screens/Profile';
-// import Smart from '../screens/Smart';
-// import SmartGo from '../screens/SmartGo';
-
-// import SmartStack from "./SmartStack"
-// import SmartStackGo from './SmartStackGo';
-// import ProfileStack from "./ProfileStack"
-
 import SmartStack from './SmartStack';
-import SmartStackGo from './SmartStackGo';
 import ProfileStack from './ProfileStack';
+import { Icon } from 'react-native-elements';
 
-const Tab = createBottomTabNavigator();
+
 const Drawer = createDrawerNavigator();
 
-export default function Navigation() {
+export default function Navigation2() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen></Drawer.Screen>
+        <Drawer.Screen name = 'index' component={IndexStack} 
+        options = {{title : "Home", drawerIcon:()=> <Icon type='material-community' size={22} name = "home" color={"black"}></Icon>}}></Drawer.Screen>
+        <Drawer.Screen name = 'smart' component={SmartStack} 
+        options = {{title : "Smart", drawerIcon:()=> <Icon type='material-community' size={22} name = "weight-lifter" color={"black"}></Icon>}}></Drawer.Screen>
+        <Drawer.Screen name = 'profile' component={ProfileStack} 
+        options = {{title : "Profile", drawerIcon:()=> <Icon type='material-community' size={22} name = "account-outline" color={"black"}></Icon>}}></Drawer.Screen>
       </Drawer.Navigator>
     </NavigationContainer>
-  )
-}
-
-function screenOption(route, color) {
-  let icono;
-
-  switch (route.name) {
-    case "index":
-      icono = "view-grid-outline"
-      break;
-    case "smart":
-      icono = "weight-lifter"
-      break;
-
-    case "smart-go":
-      icono = "google"
-      break;
-
-    case "profile":
-      icono = "account-outline"
-      break;
-
-    default:
-      break;
-  }
-
-
-  return (
-    <Icon type = 'material-community' name = {icono} size={22} color = {color}></Icon>
   )
 }
