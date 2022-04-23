@@ -8,6 +8,8 @@ import { Button } from "react-native-elements";
 
 
 export default function Index(props) {
+
+  
   const { navigation } = props;
   console.log(navigation.navigate("index"));
   const [login, setLogin] = useState(null); //Guarfar el estado de la sesíon

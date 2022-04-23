@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "navegacion",
+    "name": "App React Native",
     "slug": "navegacion",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logoapp.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -24,14 +24,13 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "permissions" : [
-        "CAMERA" ,
+      "permissions": [
+        "CAMERA",
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE",
         "MEDIA_LIBRARY"
-      ]
-        
-      
+      ],
+      "package": "com.noemtzf.navegacion"
     },
     "web": {
       "favicon": "./assets/favicon.png"

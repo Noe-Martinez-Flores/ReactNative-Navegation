@@ -6,9 +6,12 @@ import Modal from '../Modal';
 import ChangeDisplayNameForm from './ChangeDisplayNameForm';
 import ChangeDisplayEmail from './ChangeDisplayEmail';
 import ChangeDisplayPassword from './ChangeDisplayPassword';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function UserOptions(props) {
+
+  const navigation = useNavigation();
 
   const {userInfo, toastRef, setReloadUserInfo} = props;
 
@@ -36,6 +39,10 @@ export default function UserOptions(props) {
 
         break;
 
+        case "location":
+          navigation.navigate('location')
+  
+          break;
       default:
         break;
     }
@@ -95,11 +102,19 @@ function generateOptions(selectComponent) {
     },
     {
       title: "Cambiar Contraseña",
-      iconType: "material-cpmmunity",
+      iconType: "material-community",
       iconNameL: "lock",
       iconColor: "#ccc",
       iconNameR : 'chevron-right',
       onPress: ()=>selectComponent("password"),
+    },
+    {
+      title: "Ubicación",
+      iconType: "material-community",
+      iconNameL: "google-maps",
+      iconColor: "#ccc",
+      iconNameR : 'chevron-right',
+      onPress: ()=>selectComponent("location"),
     },
   ]
 }
